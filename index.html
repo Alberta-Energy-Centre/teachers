@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Support Our Students & Teachers — Alberta War Room</title>
+  <meta name="description"
+        content="Advocating for better funding for teachers and educational assistants in Alberta. If the government can pay parents during strikes, they can invest in education." />
+  <meta name="author" content="Alberta War Room" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/6e2e340698.js" crossorigin="anonymous" defer></script>
+
+  <style>
+    /* Basic reset */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Frank Ruhl Libre", serif;
+      background: #000;
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .bgimg {
+      min-height: 100%;
+      background-image: url("/background.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      max-width: 420px;
+      width: 90%;
+      height: auto;
+      border-top: 1px solid #fff;
+      border-bottom: 15px solid #fff;
+      border-radius: 6px;
+      object-fit: contain;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.02);
+      padding: 8px;
+    }
+
+    /* Video */
+    .media {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      background: #000;
+    }
+
+    /* Message box */
+    .message {
+      max-width: 960px;
+      width: calc(100% - 40px);
+      font-size: 1.25rem;
+      line-height: 1.4;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.72);
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Linked image */
+    .image-link {
+      max-width: 960px;
+      width: calc(100% - 40px);
+    }
+
+    .image-link a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .image-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Accessibility: focus states */
+    a:focus, button:focus, video:focus {
+      outline: 3px solid rgba(255,255,255,0.18);
+      outline-offset: 3px;
+    }
+
+    /* Responsive typography */
+    @media (min-width: 720px) {
+      .message { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="bgimg" role="main" aria-labelledby="page-title">
+    <img class="logo" src="/logo.png" alt="Alberta War Room logo" />
+
+    <section class="media" aria-labelledby="video-heading">
+      <h1 id="page-title">
+        Support Our Students & Teachers
+      </h1>
+
+      <h2 id="video-heading">
+        Video: Alberta Parent Pay — Teacher Strikes <br> (Source: Government of Alberta YouTube Channel)
+      </h2>
+
+      <video controls preload="metadata" aria-describedby="video-desc">
+        <source src="/alberta_parent_pay_teachers_strike.mp4" type="video/mp4" />
+        <!-- Fallback text for non-supporting browsers -->
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+    <div class="message" role="region" aria-label="Main message">
+      If the Alberta government can pay parents $30 a day during teacher strikes with a "Parent Support Payment Program", they can certainly afford to invest
+      in more teachers and educational assistants to support our children in schools.
+    </div>
+
+    <div class="image-link">
+      <a href="https://teachers.ab.ca/bargaining-next-steps/public-strike-information" target="_blank" rel="noopener noreferrer">
+        <img style="max-width: 300px; margin-left: auto; margin-right: auto;" src="/kids_are_paying_the_price.jpg" alt="Kids Are Paying the Price — link to teachers' public strike information" />
+      </a>
+    </div>
+  </main>
+</body>
+</html>
