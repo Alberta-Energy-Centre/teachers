@@ -9,6 +9,41 @@
   <meta name="author" content="Alberta War Room" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
+  <!-- Social meta: Open Graph -->
+  <meta property="og:title" content="Support Our Students & Teachers — Alberta War Room" />
+  <meta property="og:description" content="If the Alberta government can pay parents during strikes, they can invest in more teachers and educational assistants." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://teachers.abwarroom.ca" />
+  <meta property="og:image" content="https://teachers.abwarroom.ca/kids_are_paying_the_price.jpg" />
+  <meta property="og:site_name" content="Alberta War Room" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Support Our Students & Teachers — Alberta War Room" />
+  <meta name="twitter:description" content="If the Alberta government can pay parents during strikes, they can invest in more teachers and educational assistants." />
+  <meta name="twitter:image" content="https://teachers.abwarroom.ca/kids_are_paying_the_price.jpg" />
+  <meta name="twitter:site" content="@ABWarRoom" />
+
+  <!-- Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Support Our Students & Teachers — Alberta War Room",
+    "description": "Advocating for better funding for teachers and educational assistants in Alberta.",
+    "url": "https://teachers.abwarroom.ca",
+    "image": "https://teachers.abwarroom.ca/kids_are_paying_the_price.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Alberta War Room",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://teachers.abwarroom.ca/logo.png"
+      }
+    }
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/6e2e340698.js" crossorigin="anonymous" defer></script>
 
@@ -104,6 +139,36 @@
       border: 1px solid rgba(255,255,255,0.05);
     }
 
+    /* Share bar */
+    .share-bar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .share-btn:focus { outline: 3px solid rgba(255,255,255,0.18); outline-offset: 3px; }
+
+    .share-heading { 
+      font-weight:600; 
+    }
+
     /* Accessibility: focus states */
     a:focus, button:focus, video:focus {
       outline: 3px solid rgba(255,255,255,0.18);
@@ -131,21 +196,60 @@
 
       <video controls preload="metadata" aria-describedby="video-desc">
         <source src="/alberta_parent_pay_teachers_strike.mp4" type="video/mp4" />
-        <!-- Fallback text for non-supporting browsers -->
         Your browser does not support the video element.
       </video>
     </section>
 
     <div class="message" role="region" aria-label="Main message">
-      If the Alberta government can pay parents $30 a day during teacher strikes with a "Parent Support Payment Program", they can certainly afford to invest
+      If the Alberta government can pay parents $30 a day during teacher strikes with a "Parent Support Payment Program" system, they can certainly afford to invest
       in more teachers and educational assistants to support our children in schools.
     </div>
 
     <div class="image-link">
-      <a href="https://teachers.ab.ca/bargaining-next-steps/public-strike-information" target="_blank" rel="noopener noreferrer">
-        <img style="max-width: 300px; margin-left: auto; margin-right: auto;" src="/kids_are_paying_the_price.jpg" alt="Kids Are Paying the Price — link to teachers' public strike information" />
+      <a style="max-width: 300px; margin-left: auto; margin-right: auto;" href="https://teachers.ab.ca/bargaining-next-steps/public-strike-information" target="_blank" rel="noopener noreferrer">
+        <img src="/kids_are_paying_the_price.jpg" alt="Kids Are Paying the Price — link to teachers' public strike information" />
+      </a>
+    </div>
+
+    <!-- Share bar -->
+    <div class="share-bar" aria-label="Share this page">
+      <div class="share-heading" aria-hidden="true">Spread the word:</div>
+      <a id="share-twitter" class="share-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+        Twitter
+      </a>
+
+      <a id="share-facebook" class="share-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+        Facebook
+      </a>
+
+      <a id="share-linkedin" class="share-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+        LinkedIn
       </a>
     </div>
   </main>
+
+  <script>
+    (function () {
+      // Update these to your canonical URL and text
+      var pageUrl = "https://teachers.abwarroom.ca";
+      var pageTitle = "Support Our Students & Teachers — Alberta War Room";
+      var pageText = "If the Alberta government can pay parents during strikes, they can invest in more teachers and educational assistants.";
+
+      // Build share URLs
+      var twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(pageTitle + " — " + pageText) + "&url=" + encodeURIComponent(pageUrl);
+      var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl);
+      var linkedinUrl = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(pageUrl);
+
+      document.getElementById("share-twitter").setAttribute("href", twitterUrl);
+      document.getElementById("share-facebook").setAttribute("href", facebookUrl);
+      document.getElementById("share-linkedin").setAttribute("href", linkedinUrl);
+
+      // Improve preview for link-sharing by ensuring <link rel="canonical"> exists
+      var linkCanonical = document.createElement("link");
+      linkCanonical.rel = "canonical";
+      linkCanonical.href = pageUrl;
+      document.head.appendChild(linkCanonical);
+    })();
+  </script>
 </body>
 </html>
